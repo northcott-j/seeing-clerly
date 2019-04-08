@@ -1,0 +1,437 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+.graph-button {
+  line-height: 30px;
+  border-radius: 5px;
+  font-size: 18px; }
+
+.header-top {
+  position: relative !important; }
+
+.mdl-layout__header {
+  display: flex !important; }
+
+head {
+  position: relative; }
+  head h3 {
+    font-size: 26px !important; }
+
+.container {
+  width: 100%; }
+
+h6 {
+  font-size: 20px; }
+
+.form {
+  width: auto;
+  margin: 0 auto; }
+
+.mdl-textfield__input {
+  border-bottom: none; }
+
+form {
+  width: 100%;
+  padding: 20px 0px 0px;
+  margin: 0 auto; }
+  form .mdl-cell {
+    text-align: center;
+    padding-bottom: 0px; }
+    form .mdl-cell h6 {
+      padding-bottom: 10px;
+      font-size: 15px; }
+    form .mdl-cell select::-ms-expand {
+      /* for IE 11 */
+      display: none; }
+    form .mdl-cell select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background-color: #efefef;
+      color: #6f6f6f;
+      padding: 7px;
+      text-align: center; }
+      form .mdl-cell select option {
+        font-size: 14px;
+        line-height: 16px; }
+    form .mdl-cell .crime-search {
+      text-align: center; }
+    form .mdl-cell .mdl-textfield {
+      padding: 0; }
+    form .mdl-cell .mdl-textfield__input, form .mdl-cell .mdl-textfield__label {
+      font-size: 14px; }
+    form .mdl-cell .school-search {
+      margin-bottom: 0px; }
+    form .mdl-cell .city-search {
+      margin-bottom: -10px; }
+    form .mdl-cell .pop-search, form .mdl-cell .state-search {
+      margin-top: 6px; }
+
+.mdl--4-col {
+  padding: 15px 5%;
+  text-align: center; }
+
+.mdl--2-col {
+  padding-top: 20px; }
+
+.mdl--1-col {
+  text-align: center; }
+
+.arrow {
+  position: relative; }
+  .arrow img {
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    width: 50px;
+    height: auto; }
+
+.subheader {
+  padding: 5px;
+  margin-left: 20px; }
+  .subheader h4 {
+    padding: 0px !important; }
+
+#graph {
+  width: 95%;
+  margin: 0 auto; }
+  #graph canvas {
+    margin: 0 auto; }
+
+.button-row {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 40px; }
+  .button-row button {
+    margin: 5px; }
+
+.warning {
+  text-align: center;
+  margin: 0 auto; }
+
+.mobile-hide {
+  display: none; }
+
+@media (min-width: 840px) {
+  .mobile-hide {
+    display: block; }
+
+  .mdl-layout__header-row {
+    position: relative;
+    padding-left: 40px; }
+    .mdl-layout__header-row h3 {
+      font-size: 28px !important; }
+
+  form {
+    max-width: 900px;
+    display: flex; }
+
+  .mdl--4-col {
+    width: 33%;
+    padding: 0;
+    margin: 20px; }
+    .mdl--4-col .crime-search {
+      margin-bottom: 49px !important; }
+    .mdl--4-col .school-search {
+      margin-bottom: 49px !important; }
+
+  .mdl--2-col {
+    width: 15%;
+    padding-top: 128px; }
+
+  .mdl--1-col {
+    width: 10%;
+    padding-top: 137px; }
+
+  .subheader {
+    margin-left: 50px;
+    font-size: 25px; }
+    .subheader .mdl-cell {
+      display: inline-block;
+      margin: 8px; }
+
+  .arrow img {
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    padding: 0; }
+
+  .crime-search, .school-search {
+    margin-top: 20px; }
+
+  .button-row {
+    width: 100%;
+    text-align: center; }
+    .button-row button {
+      margin: 15px; }
+
+  #graph {
+    width: 80%;
+    max-width: 1000px; }
+
+  h6 {
+    padding-bottom: 30px;
+    font-size: 18px !important; } }
+label {
+  font-weight: normal !important; }
+
+.footer {
+  text-align: center;
+  color: #afafaf;
+  padding: 25px;
+  font-size: 18px; }
+  .footer ul {
+    list-style: none;
+    margin: 10px 5px;
+    padding: 0px;
+    font-size: 16px; }
+
+#about {
+  padding: 8px; }
+
+.mdl-color--primary {
+  background-color: #ff3c46 !important; }
+
+.mdl-color--secondary {
+  background-color: #ff050a !important; }
+
+.mdl-demo .mdl-layout__header-row {
+  padding-left: 10px; }
+
+.mdl-demo .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
+  font-size: inherit; }
+
+.mdl-demo .mdl-layout__tab-bar-button {
+  display: none; }
+
+.mdl-demo .mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
+  display: none; }
+
+.mdl-demo .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
+.mdl-demo .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
+  overflow: visible; }
+
+.mdl-demo .mdl-layout__tab-bar-container {
+  height: 64px; }
+
+.mdl-demo .mdl-layout__tab-bar {
+  padding: 0;
+  padding-left: 16px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%; }
+
+.mdl-demo .mdl-layout__tab-bar .mdl-layout__tab {
+  height: 64px;
+  line-height: 64px; }
+
+.mdl-demo .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
+  background-color: white;
+  height: 4px; }
+
+.mdl-demo main > .mdl-layout__tab-panel {
+  padding: 8px;
+  padding-top: 48px; }
+
+.mdl-demo .mdl-card {
+  height: auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.mdl-demo .mdl-card > * {
+  height: auto; }
+
+.mdl-demo .mdl-card .mdl-card__supporting-text {
+  margin: 40px;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 0;
+  color: inherit;
+  width: calc(100% - 80px); }
+
+.mdl-demo.mdl-demo .mdl-card__supporting-text h4 {
+  margin-top: 0;
+  margin-bottom: 20px; }
+
+.mdl-demo .mdl-card__actions {
+  margin: 0;
+  padding: 4px 40px;
+  color: inherit; }
+
+.mdl-demo .mdl-card__actions a {
+  color: #ff3c46;
+  margin: 0; }
+
+.mdl-demo .mdl-card__actions a:hover,
+.mdl-demo .mdl-card__actions a:active {
+  color: inherit;
+  background-color: transparent; }
+
+.mdl-demo .mdl-card__supporting-text + .mdl-card__actions {
+  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+
+.mdl-demo #add {
+  position: absolute;
+  right: 40px;
+  top: 36px;
+  z-index: 999; }
+
+.mdl-demo .mdl-layout__content section:not(:last-of-type) {
+  position: relative;
+  margin-bottom: 48px; }
+
+.mdl-demo section.section--center {
+  max-width: 860px;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.mdl-demo #features section.section--center {
+  max-width: 620px; }
+
+.mdl-demo section > header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.mdl-demo section > .section__play-btn {
+  min-height: 200px; }
+
+.mdl-demo section > header > .material-icons {
+  font-size: 3rem; }
+
+.mdl-demo section > button {
+  position: absolute;
+  z-index: 99;
+  top: 8px;
+  right: 8px; }
+
+.mdl-demo section .section__circle {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1; }
+
+.mdl-demo section .section__text {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 8px; }
+
+.mdl-demo section .section__text h5 {
+  font-size: inherit;
+  margin: 0;
+  margin-bottom: 0.5em; }
+
+.mdl-demo section .section__text a {
+  text-decoration: none; }
+
+.mdl-demo section .section__circle-container > .section__circle-container__circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  margin: 8px 0; }
+
+.mdl-demo section.section--footer .section__circle--big {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 8px 32px; }
+
+.mdl-demo .is-small-screen section.section--footer .section__circle--big {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 8px 16px; }
+
+.mdl-demo section.section--footer {
+  padding: 64px 0;
+  margin: 0 -8px -8px -8px; }
+
+.mdl-demo section.section--center .section__text:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13); }
+
+.mdl-demo .mdl-card .mdl-card__supporting-text > h3:first-child {
+  margin-bottom: 24px; }
+
+.mdl-demo .mdl-layout__tab-panel:not(#overview) {
+  background-color: white; }
+
+.mdl-demo #features section {
+  margin-bottom: 72px; }
+
+.mdl-demo #features h4, #features h5 {
+  margin-bottom: 16px; }
+
+.mdl-demo .toc {
+  border-left: 4px solid #C1EEF4;
+  margin: 24px;
+  padding: 0;
+  padding-left: 8px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.mdl-demo .toc h4 {
+  font-size: 0.9rem;
+  margin-top: 0; }
+
+.mdl-demo .toc a {
+  color: #4DD0E1;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 28px;
+  display: block; }
+
+.mdl-demo .mdl-menu__container {
+  z-index: 99; }
+
+/*# sourceMappingURL=main.css.map */

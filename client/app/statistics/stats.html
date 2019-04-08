@@ -1,0 +1,62 @@
+<navbar page="'statsfinder'"></navbar>
+<h4 class="subheader">Statstics for a Sample of Schools</h4>
+<div class="container">
+    <div class="col-md-2">
+        <h6 class="stats-filter-label">Select a Crime</h6>
+        <md-input-container>
+            <md-select class="" ng-model="formData.crime" placeholder="Select a Crime">
+                <md-option ng-repeat="crime in availableCrimes | orderBy: crime" ng-value="crime">{{ crime }}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <h6 class="stats-filter-label">Select a Year</h6>
+        <md-input-container>
+            <md-select class="" ng-model="formData.year" placeholder="Select a Year">
+                <md-option ng-repeat="year in availableYears" ng-value="year">{{ year }}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-button ng-disabled="processing" style="display: block;" ng-click="retrieveStats()" class="md-raised">Get Statistics</md-button>
+        <span style="display: block; color: #ff050a;" ng-show="processingError">Please select a crime and year.</span>
+    </div>
+    <div class="col-md-3">
+        <h6 class="stats-filter-label">Filter by School Population</h6>
+        <md-input-container class="">
+            <label>Greater than...</label>
+            <input type="number" class="" ng-model="formData.population" min="0">
+        </md-input-container>
+        <h6 class="stats-filter-label">Filter by State</h6>
+        <md-input-container class="">
+            <md-select ng-model="formData.state" placeholder="Select a state">
+                <md-option ng-repeat="(initials, name) in states" ng-value="initials">{{ name }}</md-option>
+            </md-select>
+        </md-input-container>
+        <h6 class="stats-filter-label">Filter by City</h6>
+        <md-autocomplete
+                md-selected-item="formData.city"
+                md-search-text="cityText"
+                md-items="item in citySearch(cityText)"
+                md-item-text="item"
+                md-delay="300"
+                md-floating-label="Search Cities">
+            <div layout="row" class="item" layout-align="start center">
+                <span md-highlight-text="cityText">{{item}}</span>
+            </div>
+        </md-autocomplete>
+    </div>
+
+    <div style="margin-bottom: 12px;" class="col-md-6">
+        <h6 style="text-align: center;">Returned Location Statistics</h6>
+        <span ng-show="showStats">
+        The statistics calculator ignores values of 0 and null which produced a <strong>sample of {{ returnedStats.sampleSize }} schools.</strong><br><br>
+        The school with the <strong>highest value</strong> for {{formData.year}} is the {{returnedStats.max.campus}} of {{returnedStats.max.name}}
+         with a value of <strong>{{returnedStats.max.val}}</strong>. The school with the <strong>lowest value</strong> for the selected year is the {{returnedStats.min.campus}}
+         of {{returnedStats.min.name}} with a value of <strong>{{returnedStats.min.val}}</strong>.<br><br>The <strong>IQR for the sample is {{returnedStats.iqr | number:2}}</strong>, <strong>the median is
+        {{returnedStats.median | number:2}}</strong>, and <strong>the mean is {{returnedStats.mean | number:2}}</strong>.<br>The sample has a <strong>standard deviation of {{returnedStats.standDev | number:2}}</strong>
+         with a <strong>coefficient of variation of {{returnedStats.percVar | number:2}}%</strong>.<br><br>Adding filters may produce more precise results.
+        </span>
+        <h6 style="text-align: center; font-size: 14px !important;" ng-show="!showStats && !failedSample">Haven't calculated anything yet.</h6>
+        <h6 style="text-align: center; font-size: 14px !important;" ng-show="failedSample">Failed to calculate statistics for the selected sample</h6>
+    </div>
+</div>
+<md-progress-linear ng-disabled="!processing" md-mode="indeterminate"></md-progress-linear>
+<foot></foot>
