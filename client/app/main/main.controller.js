@@ -10,7 +10,7 @@ angular.module('seeing-clerly')
 
     // Array for location data dicts
     var locData = [];
-    
+
     // Dictionary to hold form values
     $scope.formData = {};
 
@@ -26,11 +26,11 @@ angular.module('seeing-clerly')
     // Initializes data to Boston schools
     var initBoston = function (callback) {
       var bigFive = {
-        harvard: '57f0b3e094740b520a65b089',
-        mit: '57f0b3f794740b520a65b62d',
-        northeastern: '57f0b3d594740b520a65ade3',
-        bu: '57f0b3e794740b520a65b24f',
-        bc: '57f0b39794740b520a659ef7'
+        harvard: '5cabe1f9c4d6320493342797',
+        mit: '5cabe257c4d6320493343c1c',
+        northeastern: '5cabe233c4d632049334343e',
+        bu: '5cabe246c4d6320493343870',
+        bc: '5cabe1f0c4d63204933425c3'
       };
       var bigFiveCounter = 5;
       for (var school in bigFive) {
@@ -143,7 +143,7 @@ angular.module('seeing-clerly')
     var config = {
       type: 'line',
       data:     {
-        labels: ['2012', '2013', '2014', '2015'],
+        labels: ['2012', '2013', '2014', '2015', '2016', '2017'],
         datasets: []
       },
       options: {
@@ -220,7 +220,7 @@ angular.module('seeing-clerly')
         activeGraph = new Chart(ctx, config);
       });
     };
-    
+
     // Refreshes the graph
     $scope.refreshGraph = function () {
       fillCurves(function () {
@@ -254,5 +254,5 @@ angular.module('seeing-clerly')
     $scope.availableCrimes = ['Alcohol Arrests', 'Alcohol Referral', 'Stalking', 'Murder', 'Arson', 'Statutory Rape', 'Motor Vehicle Theft',
       'Aggravated Assault', 'Weapon Referral', 'Weapon Arrests', 'Incest', 'Drug Referral', 'Dating Violence', 'Domestic Violence',
       'Robbery', 'Burglary', 'Drug Arrests', 'Rape', 'Fondling'];
-    
+
   });

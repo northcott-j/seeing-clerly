@@ -134,5 +134,5 @@ angular.module('seeing-clerly')
       'Robbery', 'Burglary', 'Drug Arrests', 'Rape', 'Fondling'];
 
     // Available years
-    $scope.availableYears = ['2012', '2013', '2014', '2015']
+    $scope.availableYears = ['2012', '2013', '2014', '2015', '2016', '2017']
   });
