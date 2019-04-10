@@ -42,11 +42,12 @@ for i in aggragate_crime:
   aggragate_crime_val = aggragate_crime[i]
   aggragate_discipline_val = aggragate_discipline[i]
 
-  aggragate_entry['Name'] = aggragate_crime_val['INSTNM']
+  aggragate_entry['Name'] = aggragate_crime_val['INSTNM'].upper()
   aggragate_entry['GOV_ID'] = i
-  aggragate_entry['City'] = aggragate_crime_val['City']
+  aggragate_entry['City'] = aggragate_crime_val['City'].upper()
   aggragate_entry['Population'] = aggragate_crime_val['Total']
-  aggragate_entry['Campus'] = aggragate_crime_val['BRANCH']
+  aggragate_entry['Campus'] = aggragate_crime_val['BRANCH'].upper()
+  aggragate_entry['State'] = aggragate_crime_val['State'].upper()
 
 
   aggragate_entry['CrimeStats']['Murder'] = {}

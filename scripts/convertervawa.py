@@ -8,13 +8,13 @@ def isNull(value):
     else:
         return value
 
-with open('fresh_data/noncampusvawa.json') as data_file:
+with open('fresh_data/noncampusvawa_old.json') as data_file:
     noncampusvawa = json.load(data_file)
 
-with open('fresh_data/oncampusvawa.json') as data_file:
+with open('fresh_data/oncampusvawa_old.json') as data_file:
     oncampusvawa = json.load(data_file)
 
-with open('fresh_data/publiccampusvawa.json') as data_file:
+with open('fresh_data/publiccampusvawa_old.json') as data_file:
     publicpropertyvawa = json.load(data_file)
 
 the_keys = ['DOMEST', 'DATING', 'STALK']
@@ -29,7 +29,7 @@ for i in noncampusvawa:
   public_val = publicpropertyvawa[i]
 
   for stat in the_keys:
-    for year in ['15', '16', '17']:
+    for year in ['12', '13', '14']:
       final_stat = stat+year
 
       valid_noncampus_val = isNull(noncampus_val.get(final_stat,0))
@@ -42,5 +42,5 @@ for i in noncampusvawa:
       ack[i][final_stat] += valid_public_val
 
 
-with open('aggragate_vawa.json', 'w') as json_file:
+with open('aggragate_vawa_old.json', 'w') as json_file:
   json.dump(ack, json_file)

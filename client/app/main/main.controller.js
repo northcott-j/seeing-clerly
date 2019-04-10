@@ -26,11 +26,11 @@ angular.module('seeing-clerly')
     // Initializes data to Boston schools
     var initBoston = function (callback) {
       var bigFive = {
-        harvard: '5cabe1f9c4d6320493342797',
-        mit: '5cabe257c4d6320493343c1c',
-        northeastern: '5cabe233c4d632049334343e',
-        bu: '5cabe246c4d6320493343870',
-        bc: '5cabe1f0c4d63204933425c3'
+        harvard: '5cae1d55c4d63206730c137a',
+        mit: '5cae1e4ec4d63206730c27ff',
+        northeastern: '5cae1dfbc4d63206730c2021',
+        bu: '5cae1e2dc4d63206730c2453',
+        bc: '5cae1d41c4d63206730c11a6'
       };
       var bigFiveCounter = 5;
       for (var school in bigFive) {

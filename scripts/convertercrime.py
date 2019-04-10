@@ -8,19 +8,19 @@ def isNull(value):
     else:
         return value
 
-with open('fresh_data/noncampuscrime.json') as data_file:
+with open('fresh_data/noncampusarrest_old.json') as data_file:
     noncampuscrime = json.load(data_file)
 
-with open('fresh_data/oncampuscrime.json') as data_file:
+with open('fresh_data/oncampusarrest_old.json') as data_file:
     oncampuscrime = json.load(data_file)
 
-with open('fresh_data/publiccampuscrime.json') as data_file:
+with open('fresh_data/publiccampusarrest_old.json') as data_file:
     publicpropertycrime = json.load(data_file)
 
 # crime
-the_keys = ['MURD','STATR', 'ROBBE', 'AGG_A', 'BURGLA', 'ARSON', 'VEHIC', 'FONDL', 'RAPE', 'INCES']
+#the_keys = ['MURD','STATR', 'ROBBE', 'AGG_A', 'BURGLA', 'ARSON', 'VEHIC', 'FONDL', 'RAPE', 'INCES']
 # arrest + discipline
-# the_keys = ['WEAPON', 'DRUG', 'LIQUOR']
+the_keys = ['WEAPON', 'DRUG', 'LIQUOR']
 
 ack = {}
 
@@ -32,7 +32,7 @@ for i in noncampuscrime:
   public_val = publicpropertycrime[i]
 
   for stat in the_keys:
-    for year in ['15', '16', '17']:
+    for year in ['12', '13', '14']:
       final_stat = stat+year
 
       noncampus_stat = noncampus_val.get(final_stat,0)
@@ -49,5 +49,5 @@ for i in noncampuscrime:
       ack[i][final_stat] += valid_public_val
 
 
-with open('aggragate_crime.json', 'w') as json_file:
+with open('aggragate_arrest_old.json', 'w') as json_file:
   json.dump(ack, json_file)
