@@ -9,7 +9,7 @@ population will help filter the school name results.
 The application is initialized to display the reported cases of rape
 from five of the major schools in Boston - though you can adjust the 
 query to see the other ~11,000 in the database simply by clearing that
-graph and adding your own (data provided by the [US Dept. of Education](http://ope.ed.gov/campussafety/#/)).
+graph and adding your own (data provided by the [US Dept. of Education](https://ope.ed.gov/campussafety/#/datafile/list)).
 
 The data may not be 100% accurate, though we're working on verifying as
 much of it as we can.
